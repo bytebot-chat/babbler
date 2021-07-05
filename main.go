@@ -57,6 +57,7 @@ func main() {
 		chain: gomarkov.NewChain(1),
 		mutex: &sync.RWMutex{},
 	}
+	model.train("")
 
 	log.Info().Msg("Subscribing to topics...")
 	var wg sync.WaitGroup

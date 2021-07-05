@@ -93,7 +93,7 @@ func subscribeIRC(ctx context.Context, wg *sync.WaitGroup, rdb *redis.Client, to
 			RawJSON("Received message", []byte(msg.Payload)).
 			Msg("Received message")
 
-		if r1.Intn(100) < 90 {
+		if r1.Intn(100) < 2 {
 			for _, q := range outbound {
 				reply(ctx, *m, rdb, q, model.babble())
 			}
